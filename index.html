@@ -9,63 +9,45 @@
 <link rel="stylesheet" href="style.css">
 
 
+
+
+
+
 <style>
-/* COURSES MOBILE FIX */
+/* ── COURSES RESPONSIVE (definitive) ── */
+#courses { overflow-x: hidden; }
+.courses-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.courses-table { min-width: 320px; border-collapse: collapse; }
+
 @media (max-width: 768px) {
   #courses { padding: 60px 4%; }
-  .main-tabs { gap: 6px; margin-bottom: 24px; }
-  .tab-btn { padding: 8px 16px; font-size: 13px; }
+  .main-tabs { gap: 6px; margin-bottom: 24px; flex-wrap: wrap; }
+  .tab-btn { padding: 8px 18px; font-size: 13px; }
   .sub-tabs { gap: 5px; margin-bottom: 20px; flex-wrap: wrap; }
-  .sub-btn { padding: 5px 12px; font-size: 11px; }
-  .courses-table-wrap { border-radius: 10px; overflow-x: auto; }
-  .courses-table { min-width: 100%; table-layout: auto; }
-  .courses-table thead th { padding: 8px 10px; font-size: 9px; }
+  .sub-btn { padding: 5px 14px; font-size: 11px; }
+  .courses-table-wrap { border-radius: 10px; }
+  .courses-table thead th { padding: 8px 10px; font-size: 9px; letter-spacing: .06em; }
   .courses-table td { padding: 10px 10px; }
-  .c-code { font-size: 10px; min-width: 70px; }
-  .c-name { font-size: 12px; line-height: 1.4; }
-  .c-ects { font-size: 11px; min-width: 30px; }
-  .expand-btn { font-size: 11px; padding: 10px 12px; gap: 6px; }
-  .expand-chevron { width: 12px; height: 12px; }
-}
-@media (max-width: 480px) {
-  .courses-table thead th:nth-child(1),
-  .courses-table .c-code { font-size: 9px; min-width: 60px; }
-  .c-name { font-size: 11px; }
-  .tab-btn { padding: 7px 12px; font-size: 12px; }
-}
-</style>
-
-
-<style>
-/* ── COURSES MOBILE RESPONSIVE ── */
-@media (max-width: 768px) {
-  .main-tabs { gap: 6px; }
-  .tab-btn { padding: 8px 16px; font-size: 13px; }
-  .sub-tabs { gap: 5px; margin-bottom: 20px; }
-  .sub-btn { padding: 5px 12px; font-size: 11px; }
-  .courses-table-wrap { border-radius: 12px; overflow-x: hidden; }
-  .courses-table { table-layout: fixed; width: 100%; }
-  .courses-table thead th:nth-child(1) { width: 80px; }
-  .courses-table thead th:nth-child(3) { width: 44px; }
-  .courses-table thead th { font-size: 9px; padding: 8px 10px; }
-  .courses-table td { padding: 10px; }
-  .c-code { font-size: 9px; }
-  .c-name { font-size: 12px; line-height: 1.4; word-break: break-word; }
+  .c-code { font-size: 10px; white-space: nowrap; }
+  .c-name { font-size: 12px; line-height: 1.45; }
   .c-ects { font-size: 11px; }
-  .expand-btn { font-size: 11px; padding: 10px 12px; gap: 6px; }
+  .expand-btn { font-size: 11px; padding: 11px 12px; gap: 6px; }
   .expand-chevron { width: 12px; height: 12px; }
 }
+
 @media (max-width: 480px) {
-  .tab-btn { padding: 7px 12px; font-size: 12px; flex: 1; text-align: center; }
+  #courses { padding: 50px 3%; }
   .main-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+  .tab-btn { font-size: 12px; padding: 8px 10px; text-align: center; justify-content: center; }
   .sub-tabs { display: grid; grid-template-columns: repeat(3, 1fr); }
-  .sub-btn { text-align: center; }
-  /* Hide code column, show only name + ECTS */
+  .sub-btn { font-size: 10px; padding: 5px 6px; text-align: center; }
   .courses-table thead th:nth-child(1),
   .courses-table td.c-code { display: none; }
-  .courses-table thead th:nth-child(2) { width: auto; }
-  .courses-table thead th:nth-child(3) { width: 40px; }
-  .c-name { font-size: 13px; }
+  .courses-table thead th:nth-child(2) { width: auto; padding-left: 12px; }
+  .courses-table thead th:nth-child(3) { width: 42px; }
+  .c-name { font-size: 12px; padding-left: 12px !important; }
+  .c-ects { font-size: 12px; }
+  .expand-btn { font-size: 10px; letter-spacing: .03em; }
 }
 </style>
 </head>
@@ -124,16 +106,16 @@
       <div class="hero-card-name">Youssef FIHER</div>
       <div class="hero-card-sub">Namur, Belgium 🇧🇪</div>
       <div class="hero-tags">
-        <span class="tag">Python</span><span class="tag teal">Data Science</span><span class="tag purple">ML</span><span class="tag">Angular</span><span class="tag teal">Power BI</span><span class="tag">SQL</span>
+        <span class="tag">Python</span><span class="tag teal">Data Science</span><span class="tag purple">ML</span><span class="tag">Angular</span><span class="tag teal">Power BI</span><span class="tag">SQL</span><span class="tag teal">Big data</span>
       </div>
       <div class="social-row">
-        <a href="https://linkedin.com/in/youssef-fiher" target="_blank" class="social-link" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/youssef-fiher-a21105302" target="_blank" class="social-link" title="LinkedIn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
         <a href="https://github.com/YoussefFiher" target="_blank" class="social-link" title="GitHub">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         </a>
-        <a href="/cdn-cgi/l/email-protection#4c3523393f3f292a622a2524293e627a0c2b212d2520622f2321" class="social-link" title="Email">
+        <a href="mailto:youssef.fiher.6@gmail.com" class="social-link" title="Email">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </div>
@@ -466,46 +448,155 @@
 
     <!-- PERSONAL -->
     <div id="ptab-personal" class="proj-panel">
-      <div class="carousel-wrap">
-        <div class="carousel-track-outer">
-          <div class="carousel-track" id="carouselTrack">
-            <div class="carousel-slide">
-              <div class="perso-card">
-                <div class="perso-left">
-                  <div>
-                    <div class="perso-num">01 / 01</div>
-                    <div class="perso-title">Your project title here</div>
-                    <p class="perso-desc">This section is dedicated to your personal projects — side projects, experiments, open-source contributions, or passion projects. Add your projects here with a description and GitHub link!</p>
-                  </div>
-                  <div class="proj-stack" style="margin-top:20px">
-                    <span class="pill">Coming soon</span>
-                  </div>
-                  <div style="margin-top:16px;display:flex;gap:8px">
-                    <a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-                    <a href="#" class="proj-link" title="Live Demo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-                  </div>
-                </div>
-                <div class="perso-right">
-                  <div class="coming-soon">
-                    <div class="cs-icon">🚀</div>
-                    <p>Personal projects<br>coming soon</p>
-                  </div>
-                </div>
-              </div>
+      <div class="projects-grid">
+
+        <div class="proj-card reveal">
+          <div class="proj-header">
+            <div class="proj-icon orange">🏠</div>
+            <div class="proj-links">
+              <a href="https://github.com/YoussefFiher/house_prices" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+              <a href="https://github.com/YoussefFiher/house_prices" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-year">PERSONAL PROJECT · REGRESSION · STREAMLIT</div>
+            <div class="proj-title">House Prices Prediction</div>
+            <p class="proj-desc">End-to-end ML pipeline predicting house prices in Ames, Iowa. Data cleaning, feature engineering, log-transform of target variable, then Ridge Regression vs XGBoost comparison. Models evaluated with RMSE & R², deployed in an interactive Streamlit app via joblib.</p>
+            <div class="proj-stack">
+              <span class="pill">Python</span>
+              <span class="pill">XGBoost</span>
+              <span class="pill">Ridge</span>
+              <span class="pill">Streamlit</span>
+              <span class="pill">scikit-learn</span>
+              <span class="pill">Feature Eng.</span>
             </div>
           </div>
         </div>
-        <div class="carousel-nav">
-          <div class="carousel-dots" id="carouselDots">
-            <button class="carousel-dot active" onclick="goSlide(0)"></button>
+
+        <div class="proj-card reveal">
+          <div class="proj-header">
+            <div class="proj-icon purple">🎬</div>
+            <div class="proj-links">
+              <a href="https://github.com/YoussefFiher/Netflix-Analysis" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+              <a href="https://github.com/YoussefFiher/Netflix-Analysis" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
           </div>
-          <div class="carousel-arrows">
-            <button class="carousel-arrow" onclick="prevSlide()">&#8592;</button>
-            <button class="carousel-arrow" onclick="nextSlide()">&#8594;</button>
+          <div class="proj-body">
+            <div class="proj-year">PERSONAL PROJECT · EDA · STREAMLIT</div>
+            <div class="proj-title">Netflix Data Analysis & Visualization</div>
+            <p class="proj-desc">Exploratory analysis of Netflix titles dataset with Pandas. Cleans raw data, engineers date/category features, then surfaces insights — movies vs shows distribution, content evolution, popular genres & countries, ratings — through an interactive Streamlit dashboard.</p>
+            <div class="proj-stack">
+              <span class="pill">Python</span>
+              <span class="pill">Pandas</span>
+              <span class="pill">Seaborn</span>
+              <span class="pill">Streamlit</span>
+              <span class="pill">EDA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-header">
+            <div class="proj-icon teal">🔍</div>
+            <div class="proj-links">
+              <a href="https://github.com/YoussefFiher/Fraudsters_detection_revolut" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+              <a href="https://github.com/YoussefFiher/Fraudsters_detection_revolut" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-year">PERSONAL PROJECT · CLASSIFICATION · REVOLUT CHALLENGE</div>
+            <div class="proj-title">Fraudsters Detection — Revolut</div>
+            <p class="proj-desc">Take-home assignment inspired by Revolut's recruitment process. Explores fictional banking data (users, transactions, currencies) to detect fraudulent behavior. Feature engineering on transactional patterns, then Logistic Regression vs Random Forest vs Gradient Boosting compared by Accuracy, Precision, Recall, F1 & ROC-AUC. Streamlit app with prediction & visualization pages.</p>
+            <div class="proj-stack">
+              <span class="pill">Python</span>
+              <span class="pill">Gradient Boosting</span>
+              <span class="pill">Random Forest</span>
+              <span class="pill">Streamlit</span>
+              <span class="pill">ROC-AUC</span>
+              <span class="pill">Feature Eng.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-label">Credentials</div>
+    <div class="divider"></div>
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-grid">
+
+      <!-- IBM / Coursera: Supervised ML Regression -->
+      <div class="cert-card reveal">
+        <div class="cert-icon">📈</div>
+        <div class="cert-body">
+          <div class="cert-title">Supervised Machine Learning: Regression</div>
+          <div class="cert-issuer">IBM · Coursera</div>
+          <div class="cert-date">Oct 2024</div>
+          <div class="cert-actions">
+            <a href="https://coursera.org/verify/OX5I5QDK2HZG" target="_blank" class="cert-btn cert-btn-verify">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Verify
+            </a>
           </div>
         </div>
       </div>
-    </div></div>
+
+      <!-- IBM / Coursera: Intro to Software Engineering -->
+      <div class="cert-card reveal">
+        <div class="cert-icon">⚙️</div>
+        <div class="cert-body">
+          <div class="cert-title">Introduction to Software Engineering</div>
+          <div class="cert-issuer">IBM · Coursera</div>
+          <div class="cert-date">Oct 2024</div>
+          <div class="cert-actions">
+            <a href="https://coursera.org/verify/QRWXYYMXQVEU" target="_blank" class="cert-btn cert-btn-verify">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Verify
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IBM / Coursera: Django -->
+      <div class="cert-card reveal">
+        <div class="cert-icon">🌐</div>
+        <div class="cert-body">
+          <div class="cert-title">Django Application Development with SQL and Databases</div>
+          <div class="cert-issuer">IBM · Coursera</div>
+          <div class="cert-date">Oct 2024</div>
+          <div class="cert-actions">
+            <a href="https://coursera.org/verify/BFWONPGOONL4" target="_blank" class="cert-btn cert-btn-verify">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Verify
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNamur Bachelor -->
+      <div class="cert-card reveal cert-card-featured">
+        <div class="cert-icon">🎓</div>
+        <div class="cert-body">
+          <div class="cert-title">Bachelier en Sciences Informatiques</div>
+          <div class="cert-issuer">Université de Namur</div>
+          <div class="cert-date">27 Juin 2025 · Mention : Satisfaction</div>
+          <div class="cert-actions">
+            <a href="attestation_reussite.pdf" download="Attestation_Bachelier_Youssef_FIHER.pdf" class="cert-btn cert-btn-download">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -518,22 +609,24 @@
       <div class="reveal">
         <h3 style="font-family:Syne,sans-serif;font-size:20px;font-weight:700;margin-bottom:14px">Let's work together</h3>
         <p style="color:var(--muted);font-size:14px;margin-bottom:28px;line-height:1.7">Open to internships, collaborations, or a good conversation about data science and tech.</p>
-        <div class="contact-item"><div class="contact-item-icon">📧</div><span><a href="mailto:youssef.fiher.6@gmail.com" class="__cf_email__" data-cfemail="730a1c06000016155d151a1b16015d4533141e121a1f5d101c1e">[email&#160;protected]</a></span></div>
+        <div class="contact-item"><div class="contact-item-icon">📧</div><span><a href="mailto:youssef.fiher.6@gmail.com" style="color:var(--text);text-decoration:none">youssef.fiher.6@gmail.com</a></span></div>
         <div class="contact-item"><div class="contact-item-icon">📍</div><span>Namur, Belgium</span></div>
         <div class="contact-item"><div class="contact-item-icon">📱</div><span>+32 466 26 26 30</span></div>
-        <div class="contact-item"><div class="contact-item-icon">🌐</div><span>yousseffiher.github.io/Portfolio</span></div>
       </div>
       <div class="contact-form reveal">
-        <div class="form-row">
-          <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
-          <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
-        </div>
-        <div class="form-group"><label>Subject</label><input type="text" placeholder="What's this about?"></div>
-        <div class="form-group"><label>Message</label><textarea placeholder="Tell me about your project or opportunity..."></textarea></div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="alert('Configure a backend (EmailJS, Formspree) to activate this!')">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          Send Message
-        </button>
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
+            <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
+          </div>
+          <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="What's this about?" required></div>
+          <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell me about your project or opportunity..." required></textarea></div>
+          <div id="form-status" style="display:none;padding:12px 16px;border-radius:9px;font-size:13px;margin-bottom:14px;font-family:'JetBrains Mono',monospace"></div>
+          <button type="submit" class="btn btn-primary" id="submit-btn" style="width:100%;justify-content:center">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span id="btn-text">Send Message</span>
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -541,14 +634,55 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">YF</div>
+  <a href="https://www.linkedin.com/in/youssef-fiher-a21105302" target="_blank" class="footer-logo" style="text-decoration:none;color:var(--text)">YF</a>
   <div class="footer-copy">© 2025 Youssef FIHER — Built with passion</div>
   <div style="display:flex;gap:8px">
-    <a href="https://linkedin.com/in/youssef-fiher" target="_blank" class="social-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://www.linkedin.com/in/youssef-fiher-a21105302" target="_blank" class="social-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
     <a href="https://github.com/YoussefFiher" target="_blank" class="social-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+
+<script>
+// ── CONTACT FORM (Formspree) ──
+var contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    var btnText = document.getElementById('btn-text');
+    var status = document.getElementById('form-status');
+    btn.disabled = true;
+    btnText.textContent = 'Sending...';
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(resp) {
+      if (resp.ok) {
+        status.style.display = 'block';
+        status.style.background = 'rgba(6,182,212,.12)';
+        status.style.border = '1px solid rgba(6,182,212,.3)';
+        status.style.color = '#06b6d4';
+        status.textContent = '✓ Message sent! I will get back to you soon.';
+        contactForm.reset();
+        btnText.textContent = 'Send Message';
+        btn.disabled = false;
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    }).catch(function() {
+      status.style.display = 'block';
+      status.style.background = 'rgba(239,68,68,.1)';
+      status.style.border = '1px solid rgba(239,68,68,.3)';
+      status.style.color = '#ef4444';
+      status.textContent = '✗ Something went wrong. Please email me directly at youssef.fiher.6@gmail.com';
+      btnText.textContent = 'Send Message';
+      btn.disabled = false;
+    });
+  });
+}
+</script>
 </body>
 </html>
