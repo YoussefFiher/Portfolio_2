@@ -234,39 +234,18 @@ var translations = {
 
     // PROJECTS
     projTabs: ['🎓 Academic','💼 Professional','✨ Personal'],
-    projYears: [
-      'BACHELOR 2024 · INFOB314 — SYNTAX & SEMANTICS',
-      'BACHELOR 2024 · INFOB318 — INDIVIDUAL PROJECT',
-      'MASTER 2025 · IDASM104 — DATA ANALYTICS PROJECT',
-      'MASTER 2026 · INFOM232 — DEEP LEARNING',
-      'FEB 2025 — JUN 2025 · UNIVERSITY OF NAMUR',
-      'FEB 2025 — JUN 2025 · HMS NETWORKS · BELGIUM',
-      'PERSONAL PROJECT · REGRESSION · STREAMLIT',
-      'PERSONAL PROJECT · EDA · STREAMLIT',
-      'PERSONAL PROJECT · CLASSIFICATION · REVOLUT CHALLENGE'
-    ],
-    projTitles: [
-      'Emoji-to-Python Compiler',
-      'Clothed — Clothing Donation Platform',
-      'Seekr — Cultural Exploration App',
-      'Galaxy Classification — Neural Networks',
-      'Elia Energy Dashboard',
-      'Multilingual Translation System',
-      'House Prices Prediction',
-      'Netflix Data Analysis & Visualization',
-      'Fraudsters Detection — Revolut'
-    ],
-    projDescs: [
-      'Built a compiler that converts an emoji-based programming language into Python code using ANTLR for lexical and syntactic analysis. Applied to control a micro-robot.',
-      'Web application facilitating clothing donations with an intuitive interface to offer and search for items. Focused on UX and efficient donation management.',
-      'Web app for cultural exploration using open data from Namur. Clustering and graph algorithms optimize art route planning with interactive geolocation experiences.',
-      'Automatic classification of galaxies into 10 categories using CNNs trained on 15K images. Full pipeline: data exploration, preprocessing, model architecture (PyTorch), hyperparameter tuning, and Kaggle leaderboard submission.',
-      'ETL pipeline on wind and solar energy data from Elia using SSIS. Built an interactive Power BI dashboard for energy performance visualization and operational decision-making.',
-      'Collaborated with HMS Networks to design a multilingual back-office for marketing teams. Implemented i18n tag management, integrated the Lokalize API to automate translation workflows, and worked in Agile sprints tracked via Jira.',
-      'End-to-end ML pipeline predicting house prices in Ames, Iowa. Data cleaning, feature engineering, log-transform of target variable, then Ridge Regression vs XGBoost comparison. Models evaluated with RMSE & R², deployed in an interactive Streamlit app via joblib.',
-      'Exploratory analysis of Netflix titles dataset with Pandas. Cleans raw data, engineers date/category features, then surfaces insights — movies vs shows distribution, content evolution, popular genres & countries, ratings — through an interactive Streamlit dashboard.',
-      "Take-home assignment inspired by Revolut's recruitment process. Explores fictional banking data (users, transactions, currencies) to detect fraudulent behavior. Feature engineering on transactional patterns, then Logistic Regression vs Random Forest vs Gradient Boosting compared by Accuracy, Precision, Recall, F1 & ROC-AUC. Streamlit app with prediction & visualization pages."
-    ],
+    projData: {
+      'emoji':   { year: 'BACHELOR 2024 · INFOB314 — SYNTAX & SEMANTICS',              title: 'Emoji-to-Python Compiler',                   desc: 'Built a compiler that converts an emoji-based programming language into Python code using ANTLR for lexical and syntactic analysis. Applied to control a micro-robot.' },
+      'clothed': { year: 'BACHELOR 2024 · INFOB318 — INDIVIDUAL PROJECT',              title: 'Clothed — Clothing Donation Platform',        desc: 'Web application facilitating clothing donations with an intuitive interface to offer and search for items. Focused on UX and efficient donation management.' },
+      'seekr':   { year: 'MASTER 2025 · IDASM104 — DATA ANALYTICS PROJECT',            title: 'Seekr — Cultural Exploration App',            desc: 'Web app for cultural exploration using open data from Namur. Clustering and graph algorithms optimize art route planning with interactive geolocation experiences.' },
+      'galaxy':  { year: 'MASTER 2026 · INFOM232 — DEEP LEARNING',                    title: 'Galaxy Classification — Neural Networks',     desc: 'Automatic classification of galaxies into 10 categories using CNNs trained on 15K images. Full pipeline: data exploration, preprocessing, model architecture (PyTorch), hyperparameter tuning, and Kaggle leaderboard submission.' },
+      'meteor':  { year: 'MASTER 2025 · IDASM103 — INFORMATION VISUALISATION',        title: 'METEOR — Meteorite Observatory',              desc: 'Interactive dashboard for exploring 4,985 meteorite impacts worldwide. Built around a teacher persona to make scientific data accessible to students — world map, temporal analysis, and a scientific quiz powered by real NASA data.' },
+      'elia':    { year: 'FEB 2025 — JUN 2025 · UNIVERSITY OF NAMUR',                 title: 'Elia Energy Dashboard',                      desc: 'ETL pipeline on wind and solar energy data from Elia using SSIS. Built an interactive Power BI dashboard for energy performance visualization and operational decision-making.' },
+      'hms':     { year: 'FEB 2025 — JUN 2025 · HMS NETWORKS · BELGIUM',              title: 'Multilingual Translation System',             desc: 'Collaborated with HMS Networks to design a multilingual back-office for marketing teams. Implemented i18n tag management, integrated the Lokalize API to automate translation workflows, and worked in Agile sprints tracked via Jira.' },
+      'house':   { year: 'PERSONAL PROJECT · REGRESSION · STREAMLIT',                 title: 'House Prices Prediction',                    desc: 'End-to-end ML pipeline predicting house prices in Ames, Iowa. Data cleaning, feature engineering, log-transform of target variable, then Ridge Regression vs XGBoost comparison. Models evaluated with RMSE & R², deployed in an interactive Streamlit app via joblib.' },
+      'netflix': { year: 'PERSONAL PROJECT · EDA · STREAMLIT',                        title: 'Netflix Data Analysis & Visualization',      desc: 'Exploratory analysis of Netflix titles dataset with Pandas. Cleans raw data, engineers date/category features, then surfaces insights — movies vs shows distribution, content evolution, popular genres & countries, ratings — through an interactive Streamlit dashboard.' },
+      'revolut': { year: 'PERSONAL PROJECT · CLASSIFICATION · REVOLUT CHALLENGE',     title: 'Fraudsters Detection — Revolut',             desc: "Take-home assignment inspired by Revolut's recruitment process. Explores fictional banking data to detect fraudulent behavior. Logistic Regression vs Random Forest vs Gradient Boosting compared by Accuracy, Precision, Recall, F1 & ROC-AUC." },
+    },
     confidentialElia: '⚠ Due to data confidentiality agreements, the dashboard and ETL transformations cannot be shared publicly.',
     confidentialHms: '⚠ Due to confidentiality agreements with HMS Networks, the source code and internal tooling cannot be shared publicly.',
 
@@ -345,39 +324,18 @@ var translations = {
 
     // PROJECTS
     projTabs: ['🎓 Académique','💼 Professionnel','✨ Personnel'],
-    projYears: [
-      'BACHELIER 2024 · INFOB314 — SYNTAXE & SÉMANTIQUE',
-      'BACHELIER 2024 · INFOB318 — PROJET INDIVIDUEL',
-      'MASTER 2025 · IDASM104 — PROJET DATA ANALYTICS',
-      'MASTER 2026 · INFOM232 — DEEP LEARNING',
-      'FÉV 2025 — JUIN 2025 · UNIVERSITÉ DE NAMUR',
-      'FÉV 2025 — JUIN 2025 · HMS NETWORKS · BELGIQUE',
-      'PROJET PERSONNEL · RÉGRESSION · STREAMLIT',
-      'PROJET PERSONNEL · EDA · STREAMLIT',
-      'PROJET PERSONNEL · CLASSIFICATION · REVOLUT CHALLENGE'
-    ],
-    projTitles: [
-      'Compilateur Emoji-vers-Python',
-      'Clothed — Plateforme de Dons de Vêtements',
-      'Seekr — Application d\'Exploration Culturelle',
-      'Classification de Galaxies — Réseaux de Neurones',
-      'Dashboard Énergétique Elia',
-      'Système de Traduction Multilingue',
-      'Prédiction des Prix Immobiliers',
-      'Analyse des Données Netflix',
-      'Détection de Fraudeurs — Revolut'
-    ],
-    projDescs: [
-      'Compilateur traduisant un langage de programmation basé sur des emojis vers Python, via ANTLR pour l\'analyse lexicale et syntaxique. Appliqué au contrôle d\'un micro-robot.',
-      'Application web facilitant les dons de vêtements avec une interface intuitive pour proposer et rechercher des articles. Focus sur l\'UX et la gestion efficace des dons.',
-      'Application web d\'exploration culturelle utilisant les données ouvertes de Namur. Des algorithmes de clustering et de graphes optimisent la planification de circuits artistiques.',
-      'Classification automatique de galaxies en 10 catégories via des CNN entraînés sur 15K images. Pipeline complet : exploration, prétraitement, architecture PyTorch, tuning et soumission Kaggle.',
-      'Pipeline ETL sur les données éoliennes et solaires d\'Elia via SSIS. Dashboard Power BI interactif pour la visualisation des performances énergétiques et l\'aide à la décision.',
-      'Collaboration avec HMS Networks pour concevoir un back-office multilingue pour les équipes marketing. Gestion des tags i18n, intégration de l\'API Lokalize, sprints Agile via Jira.',
-      'Pipeline ML complet prédisant les prix immobiliers à Ames, Iowa. Nettoyage, feature engineering, log-transformation, puis comparaison Ridge Regression vs XGBoost. Déployé en app Streamlit.',
-      'Analyse exploratoire du dataset Netflix avec Pandas. Nettoyage, feature engineering temporel, puis dashboard Streamlit interactif : distribution films/séries, genres populaires, pays, évolution du contenu.',
-      'Mission inspirée du processus de recrutement Revolut. Exploration de données bancaires fictives pour détecter des comportements frauduleux. Feature engineering transactionnel, puis comparaison Logistic Regression vs Random Forest vs Gradient Boosting.'
-    ],
+    projData: {
+      'emoji':   { year: 'BACHELIER 2024 · INFOB314 — SYNTAXE & SÉMANTIQUE',          title: 'Compilateur Emoji-vers-Python',                    desc: "Compilateur traduisant un langage de programmation basé sur des emojis vers Python, via ANTLR pour l'analyse lexicale et syntaxique. Appliqué au contrôle d'un micro-robot." },
+      'clothed': { year: 'BACHELIER 2024 · INFOB318 — PROJET INDIVIDUEL',              title: 'Clothed — Plateforme de Dons de Vêtements',        desc: "Application web facilitant les dons de vêtements avec une interface intuitive pour proposer et rechercher des articles. Focus sur l'UX et la gestion efficace des dons." },
+      'seekr':   { year: 'MASTER 2025 · IDASM104 — PROJET DATA ANALYTICS',             title: "Seekr — Application d'Exploration Culturelle",     desc: "Application web d'exploration culturelle utilisant les données ouvertes de Namur. Des algorithmes de clustering et de graphes optimisent la planification de circuits artistiques." },
+      'galaxy':  { year: 'MASTER 2026 · INFOM232 — DEEP LEARNING',                    title: 'Classification de Galaxies — Réseaux de Neurones', desc: 'Classification automatique de galaxies en 10 catégories via des CNN entraînés sur 15K images. Pipeline complet : exploration, prétraitement, architecture PyTorch, tuning et soumission Kaggle.' },
+      'meteor':  { year: "MASTER 2025 · IDASM103 — VISUALISATION DE L'INFORMATION",   title: 'METEOR — Observatoire des Météorites',              desc: "Dashboard interactif explorant 4 985 impacts météoritiques à travers le monde. Conçu autour du persona d'un professeur souhaitant rendre les données scientifiques accessibles aux étudiants — carte mondiale, analyse temporelle et quiz basés sur les vraies données NASA." },
+      'elia':    { year: 'FÉV 2025 — JUIN 2025 · UNIVERSITÉ DE NAMUR',                title: 'Dashboard Énergétique Elia',                        desc: "Pipeline ETL sur les données éoliennes et solaires d'Elia via SSIS. Dashboard Power BI interactif pour la visualisation des performances énergétiques et l'aide à la décision." },
+      'hms':     { year: 'FÉV 2025 — JUIN 2025 · HMS NETWORKS · BELGIQUE',            title: 'Système de Traduction Multilingue',                 desc: "Collaboration avec HMS Networks pour concevoir un back-office multilingue pour les équipes marketing. Gestion des tags i18n, intégration de l'API Lokalize, sprints Agile via Jira." },
+      'house':   { year: 'PROJET PERSONNEL · RÉGRESSION · STREAMLIT',                 title: 'Prédiction des Prix Immobiliers',                   desc: 'Pipeline ML complet prédisant les prix immobiliers à Ames, Iowa. Nettoyage, feature engineering, log-transformation, puis comparaison Ridge Regression vs XGBoost. Déployé en app Streamlit.' },
+      'netflix': { year: 'PROJET PERSONNEL · EDA · STREAMLIT',                        title: 'Analyse des Données Netflix',                       desc: 'Analyse exploratoire du dataset Netflix avec Pandas. Nettoyage, feature engineering temporel, puis dashboard Streamlit interactif : distribution films/séries, genres populaires, pays, évolution du contenu.' },
+      'revolut': { year: 'PROJET PERSONNEL · CLASSIFICATION · REVOLUT CHALLENGE',     title: 'Détection de Fraudeurs — Revolut',                  desc: 'Mission inspirée du processus de recrutement Revolut. Exploration de données bancaires fictives pour détecter des comportements frauduleux. Feature engineering transactionnel, puis comparaison Logistic Regression vs Random Forest vs Gradient Boosting.' },
+    },
     confidentialElia: '⚠ En raison d\'accords de confidentialité, le dashboard et les transformations ETL ne peuvent pas être partagés publiquement.',
     confidentialHms: '⚠ En raison d\'accords de confidentialité avec HMS Networks, le code source et les outils internes ne peuvent pas être partagés publiquement.',
 
@@ -519,24 +477,21 @@ function toggleLang() {
     if (t.projTabs[i]) b.textContent = t.projTabs[i];
   });
 
-  // ── Project cards
-  var projCards = document.querySelectorAll('.proj-card');
-  projCards.forEach(function(card, i) {
+  // ── Project cards (by data-proj id — stable, order-independent)
+  document.querySelectorAll('.proj-card[data-proj]').forEach(function(card) {
+    var id = card.getAttribute('data-proj');
+    var d  = t.projData[id];
+    if (!d) return;
     var year = card.querySelector('.proj-year');
-    if (year && t.projYears[i]) year.textContent = t.projYears[i];
+    if (year) year.textContent = d.year;
     var title = card.querySelector('.proj-title');
-    if (title && t.projTitles[i]) title.textContent = t.projTitles[i];
+    if (title) title.textContent = d.title;
     var desc = card.querySelector('.proj-desc');
-    if (desc && t.projDescs[i]) {
-      // Preserve the confidentiality note if present
-      var confNote = desc.querySelector('em');
+    if (desc) {
       var confText = '';
-      if (confNote) {
-        // Update confidentiality note based on project
-        if (i === 4) confText = '<br><br><em style="color:var(--text-muted);font-size:0.85em">' + t.confidentialElia + '</em>';
-        if (i === 5) confText = '<br><br><em style="color:var(--text-muted);font-size:0.85em">' + t.confidentialHms + '</em>';
-      }
-      desc.innerHTML = t.projDescs[i] + confText;
+      if (id === 'elia') confText = '<br><br><em style="color:var(--muted);font-size:0.85em">' + t.confidentialElia + '</em>';
+      if (id === 'hms')  confText = '<br><br><em style="color:var(--muted);font-size:0.85em">' + t.confidentialHms + '</em>';
+      desc.innerHTML = d.desc + confText;
     }
   });
 
