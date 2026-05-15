@@ -93,6 +93,64 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
+<!-- NYC TAXI VIDEO MODAL -->
+<div id="nycModal" class="video-modal-overlay" onclick="closeNycModal(event)">
+  <div class="video-modal">
+    <button class="video-modal-close" onclick="closeNycModal(event)" title="Close">&times;</button>
+
+    <div class="video-modal-header">
+      <span class="video-modal-badge">DEMO</span>
+      <h3 class="video-modal-title">NYC Taxi Analytics Project</h3>
+    </div>
+
+    <div class="video-modal-content">
+      <video id="nycVideo" controls>
+        <source src="NYC_project.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<script>
+function openNycModal() {
+  const modal = document.getElementById('nycModal');
+  const video = document.getElementById('nycVideo');
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  video.play();
+}
+
+function closeNycModal(e) {
+  if (e) e.stopPropagation();
+
+  const modal = document.getElementById('nycModal');
+  const video = document.getElementById('nycVideo');
+
+  if (e && e.target !== modal && !e.target.classList.contains('video-modal-close')) return;
+
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  video.pause();
+  video.currentTime = 0;
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('nycModal');
+
+    if (modal.classList.contains('active')) {
+      const video = document.getElementById('nycVideo');
+
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
+});
+</script>
+
 <!-- CNN VIDEO MODAL -->
 <div id="cnnModal" class="video-modal-overlay" onclick="closeCnnModal(event)">
   <div class="video-modal">
@@ -539,34 +597,35 @@ document.addEventListener('keydown', function(e) {
     <div class="divider"></div>
     <h2 class="section-title">Projects</h2>
     <div class="proj-tabs">
-      <button class="proj-tab-btn acad active" data-ptab="academic">🎓 Academic</button>
-      <button class="proj-tab-btn pro" data-ptab="professional">💼 Professional</button>
-      <button class="proj-tab-btn perso" data-ptab="personal">✨ Personal</button>
+      <button class="proj-tab-btn acad active" data-ptab="academic"> Academic</button>
+      <button class="proj-tab-btn pro" data-ptab="professional"> Professional</button>
+      <button class="proj-tab-btn perso" data-ptab="personal"> Personal</button>
     </div>
+
 
     <!-- ACADEMIC -->
     <div id="ptab-academic" class="proj-panel active">
       <div class="projects-grid">
         <div class="proj-card reveal" data-proj="emoji">
-          <div class="proj-header"><div class="proj-icon purple">🤖</div><div class="proj-links"><a href="https://github.com/YoussefFiher/ss" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openSsModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
+          <div class="proj-header"><div class="proj-links"><a href="https://github.com/YoussefFiher/ss" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openSsModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
           <div class="proj-body"><div class="proj-year">BACHELOR 2024 · INFOB314 — SYNTAXE & SÉMANTIQUE</div><div class="proj-title">Emoji-to-Python Compiler</div><p class="proj-desc">Built a compiler that converts an emoji-based programming language into Python code using ANTLR for lexical and syntactic analysis. Applied to control a micro-robot.</p><div class="proj-stack"><span class="pill">Java</span><span class="pill">ANTLR</span><span class="pill">Python</span><span class="pill">Compiler</span></div></div>
         </div>
         <div class="proj-card reveal" data-proj="clothed">
-          <div class="proj-header"><div class="proj-icon green">👗</div><div class="proj-links"><a href="https://github.com/YoussefFiher/clothed" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openClothedModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
+          <div class="proj-header"><div class="proj-links"><a href="https://github.com/YoussefFiher/clothed" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openClothedModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
           <div class="proj-body"><div class="proj-year">BACHELOR 2024 · INFOB318 — PROJET INDIVIDUEL</div><div class="proj-title">Clothed — Clothing Donation Platform</div><p class="proj-desc">Web application facilitating clothing donations with an intuitive interface to offer and search for items. Focused on UX and efficient donation management.</p><div class="proj-stack"><span class="pill">Angular</span><span class="pill">TypeScript</span><span class="pill">UX Design</span></div></div>
         </div>
 
         <div class="proj-card reveal" data-proj="seekr">
-          <div class="proj-header"><div class="proj-icon teal">🗺️</div><div class="proj-links"><a href="https://github.com/YoussefFiher/seekr" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openVideoModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
+          <div class="proj-header"><div class="proj-links"><a href="https://github.com/YoussefFiher/seekr" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openVideoModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
           <div class="proj-body"><div class="proj-year">MASTER 2025 · IDASM104 — PROJET DATA ANALYTICS</div><div class="proj-title">Seekr — Cultural Exploration App</div><p class="proj-desc">Web app for cultural exploration using open data from Namur. Clustering and graph algorithms optimize art route planning with interactive geolocation experiences.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Folium</span><span class="pill">Mapbox</span><span class="pill">scikit-learn</span></div></div>
         </div>
         <div class="proj-card reveal" data-proj="galaxy">
-          <div class="proj-header"><div class="proj-icon purple">🔭</div><div class="proj-links"><a href="https://github.com/YoussefFiher/galaxy-classifier" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openCnnModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
+          <div class="proj-header"><div class="proj-links"><a href="https://github.com/YoussefFiher/galaxy-classifier" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openCnnModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
           <div class="proj-body"><div class="proj-year">MASTER 2026 · INFOM232 — DEEP LEARNING</div><div class="proj-title">Galaxy Classification — Neural Networks</div><p class="proj-desc">Automatic classification of galaxies into 10 categories using CNNs trained on 15K images. Full pipeline: data exploration, preprocessing, model architecture (PyTorch), hyperparameter tuning, and Kaggle leaderboard submission.</p><div class="proj-stack"><span class="pill">PyTorch</span><span class="pill">CNN</span><span class="pill">Kaggle</span><span class="pill">Python</span><span class="pill">Google Colab</span></div></div>
         </div>
         <div class="proj-card reveal" data-proj="meteor">
   <div class="proj-header">
-    <div class="proj-icon teal">🌠</div>
+  
     <div class="proj-links">
       <a href="https://github.com/YoussefFiher/meteorites" class="proj-link" title="GitHub">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
@@ -597,11 +656,11 @@ document.addEventListener('keydown', function(e) {
     <div id="ptab-professional" class="proj-panel">
       <div class="projects-grid">
         <div class="proj-card reveal" data-proj="elia">
-          <div class="proj-header"><div class="proj-icon orange">⚡</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-header"><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
           <div class="proj-body"><div class="proj-year">FEB 2025 — JUN 2025 · UNIVERSITÉ DE NAMUR</div><div class="proj-title">Elia Energy Dashboard</div><p class="proj-desc">ETL pipeline on wind and solar energy data from Elia using SSIS. Built an interactive Power BI dashboard for energy performance visualization and operational decision-making.<br><br><em style="color:var(--text-muted);font-size:0.85em">⚠ Due to data confidentiality agreements, the dashboard and ETL transformations cannot be shared publicly.</em></p><div class="proj-stack"><span class="pill">Power BI</span><span class="pill">SQL</span><span class="pill">SSIS</span><span class="pill">ETL</span></div></div>
         </div>
         <div class="proj-card reveal" data-proj="hms">
-          <div class="proj-header"><div class="proj-icon blue">🌐</div><div class="proj-links"></div></div>
+          <div class="proj-header"><div class="proj-links"></div></div>
           <div class="proj-body"><div class="proj-year">FEB 2025 — JUN 2025 · HMS NETWORKS · BELGIUM</div><div class="proj-title">Multilingual Translation System</div><p class="proj-desc">Collaborated with HMS Networks to design a multilingual back-office for marketing teams. Implemented i18n tag management, integrated the Lokalize API to automate translation workflows, and worked in Agile sprints tracked via Jira.<br><br><em style="color:var(--text-muted);font-size:0.85em">⚠ Due to confidentiality agreements with HMS Networks, the source code and internal tooling cannot be shared publicly.</em></p><div class="proj-stack"><span class="pill">i18n</span><span class="pill">Lokalize API</span><span class="pill">Jira</span><span class="pill">Agile</span><span class="pill">Back-office</span></div></div>
         </div>
       </div>
@@ -611,16 +670,20 @@ document.addEventListener('keydown', function(e) {
     <div id="ptab-personal" class="proj-panel">
       <div class="projects-grid">
         <div class="proj-card reveal" data-proj="house">
-          <div class="proj-header"><div class="proj-icon orange">🏠</div><div class="proj-links"><a href="https://github.com/YoussefFiher/house_prices" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://houseprices-project.streamlit.app/" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+          <div class="proj-header"><div class="proj-links"><a href="https://github.com/YoussefFiher/house_prices" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://houseprices-project.streamlit.app/" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
           <div class="proj-body"><div class="proj-year">PERSONAL PROJECT · REGRESSION · STREAMLIT</div><div class="proj-title">House Prices Prediction</div><p class="proj-desc">End-to-end ML pipeline predicting house prices in Ames, Iowa. Data cleaning, feature engineering, log-transform of target variable, then Ridge Regression vs XGBoost comparison. Models evaluated with RMSE & R², deployed in an interactive Streamlit app via joblib.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">XGBoost</span><span class="pill">Ridge</span><span class="pill">Streamlit</span><span class="pill">scikit-learn</span><span class="pill">Feature Eng.</span></div></div>
         </div>
         <div class="proj-card reveal" data-proj="netflix">
-          <div class="proj-header"><div class="proj-icon purple">🎬</div><div class="proj-links"><a href="https://github.com/YoussefFiher/Netflix-Analysis" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://netflix-analysis-project.streamlit.app/" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+          <div class="proj-header"><div class="proj-links"><a href="https://github.com/YoussefFiher/Netflix-Analysis" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://netflix-analysis-project.streamlit.app/" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
           <div class="proj-body"><div class="proj-year">PERSONAL PROJECT · EDA · STREAMLIT</div><div class="proj-title">Netflix Data Analysis & Visualization</div><p class="proj-desc">Exploratory analysis of Netflix titles dataset with Pandas. Cleans raw data, engineers date/category features, then surfaces insights — movies vs shows distribution, content evolution, popular genres & countries, ratings — through an interactive Streamlit dashboard.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">Seaborn</span><span class="pill">Streamlit</span><span class="pill">EDA</span></div></div>
         </div>
         <div class="proj-card reveal" data-proj="revolut">
-          <div class="proj-header"><div class="proj-icon teal">🔍</div><div class="proj-links"><a href="https://github.com/YoussefFiher/Fraudsters_detection_revolut" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://fraudstersdetectionrevolut.streamlit.app/" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+          <div class="proj-header"><div class="proj-links"><a href="https://github.com/YoussefFiher/Fraudsters_detection_revolut" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://fraudstersdetectionrevolut.streamlit.app/" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
           <div class="proj-body"><div class="proj-year">PERSONAL PROJECT · CLASSIFICATION · REVOLUT CHALLENGE</div><div class="proj-title">Fraudsters Detection — Revolut</div><p class="proj-desc">Take-home assignment inspired by Revolut's recruitment process. Explores fictional banking data (users, transactions, currencies) to detect fraudulent behavior. Feature engineering on transactional patterns, then Logistic Regression vs Random Forest vs Gradient Boosting compared by Accuracy, Precision, Recall, F1 & ROC-AUC. Streamlit app with prediction & visualization pages.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Gradient Boosting</span><span class="pill">Random Forest</span><span class="pill">Streamlit</span><span class="pill">ROC-AUC</span><span class="pill">Feature Eng.</span></div></div>
+        </div>
+        <div class="proj-card reveal" data-proj="NYC_taxi_analytics">
+          <div class="proj-header"><div class="proj-links"><a href="https://github.com/YoussefFiher/NYC_project" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://drive.google.com/drive/folders/1KMUn8srze9RMCbVcK_j73Fs3y0LtFUz0?usp=sharing" target="_blank" class="proj-link" title="the dashboard .pbix in google drive "><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openNycModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
+          <div class="proj-body"><div class="proj-year">PERSONAL PROJECT · end to end data engeneering project  · power bi dashboard</div><div class="proj-title">NYC_taxi_analytics</div><p class="proj-desc">I designed and delivered an end‑to‑end data engineering project using Azure Data Lake Storage and Azure Databricks. The pipeline ingests raw NYC Taxi data into a Bronze/Silver/Gold architecture, performs preprocessing, cleaning, and feature engineering, and models the data in a star‑schema optimized for analytics. The final curated datasets power an interactive Power BI dashboard that provides geographic analysis, temporal trends, revenue insights, and weather‑based analytics to better understand mobility patterns across New York City.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">pyspark</span><span class="pill">microsoft Azure</span><span class="pill">power bi</span><span class="pill">Databricks</span><span class="pill">Feature Eng.</span></div></div>
         </div>
       </div>
     </div>
